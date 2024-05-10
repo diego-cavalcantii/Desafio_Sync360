@@ -1,0 +1,280 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+:root {
+    --primary-color : rgb(18,5,57) ;
+    --gradient:linear-gradient(77deg, rgba(18,5,57,1) 0%, rgba(67,50,122,1) 54%, rgba(54,33,120,1) 100%);
+    --button-color: #1f104f;
+    --primary-font:Arial, Helvetica, sans-serif
+}
+
+
+h1,span {
+    font-family: var(--primary-font);
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+header {
+    background-color: var(--primary-color);
+    background: var(--gradient);
+}
+
+nav {
+    width: 85%;
+    margin: 0 auto;
+    padding: 1.3rem 0;
+    color: white;
+}
+
+main {
+    width: 80%;
+    margin: 85px auto;
+    display: grid;
+    gap: 55px;
+}
+
+.container-infos {
+    display: flex;
+    flex-direction: column;
+}
+
+#box-foto {
+    align-self: center;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#img-inicial {
+    min-width: 200px;
+    max-width: 200px;
+    /* border-radius: 100%; */
+}
+
+#box-info {
+    margin-bottom: 10px;
+}
+
+
+.nome,.idade,.endereco,.bio,.bairro,.estado {
+    width: 100%;
+    background-color: #e2e2e2;
+    border: 2px solid #e2e2e2;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .text-bio {
+    width: 500px;
+  }
+
+  .text-bio > .bio {
+    max-width: 100%;
+  }
+
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    background-color: #ffff;
+}
+
+#update {
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    background-color: var(--button-color);
+    cursor: pointer;
+    justify-self: center;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper > h1 {
+    flex-grow: 1;
+}
+
+.wrapper > button {
+    border: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding:  0 10px;
+    background-color: transparent;
+    color: crimson;
+}
+
+#forms {
+    display: flex;
+    flex-direction: column;
+}
+
+input,textarea,select {
+    color: black;
+    width: 100%;
+    border: 2px solid #e2e2e2;
+    background-color: #e2e2e2;
+    padding: 15px;
+    font-size: .875rem;
+    font-weight: 700;
+    border-radius: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input::placeholder,textarea::placeholder,option {
+    color: gray;
+}
+
+
+
+input:hover,textarea:hover {
+    border: 2px solid darkblue;
+}
+
+input[type="file"]{
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    color: black;
+    font-weight: 500;
+}
+
+input[type="button"]{
+    border: none;
+   background-color: var(--button-color);
+   width: min-content;
+   align-self: center;
+   padding: 15px 40px;
+   color: white;
+   cursor: pointer;
+}
+
+.num {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.num > div {
+    width: 100%;
+}
+
+footer {
+    background-color: var(--primary-color);
+    background: var(--gradient);
+    color: white;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(min-width:375px){
+    main {
+        grid-template-columns:1fr;
+    }
+    .container-infos {
+        grid-area: 1/1/2/1;
+    }
+    #box-info {
+        grid-area: 2/1/3/1;
+    }
+    .line {
+        display: none;
+    }
+    #update {
+        grid-area: 3/1/4/1;
+    }
+    .container-form {
+        grid-area: 3/1/4/1;
+    }
+    #forms{
+        gap: 20px;
+    }
+    #box-info > ul > li + li {
+        margin-top: 20px;
+      }
+}
+
+@media(min-width:1200px){
+    main {
+    grid-template-columns: 1fr 10px 1fr;
+    }
+    .container-infos {
+        grid-area: 1/1/2/1;
+    }
+    .line {
+        display: block;
+        background-color: darkorange;
+        grid-template-columns: 1/2/-1/2;
+    }
+    #box-info {
+    grid-area: 1/3/-1/-1;
+    }
+    #botao {
+        grid-area: 2/1/3/-1;
+        justify-self: center;
+    }
+
+       #update {
+     grid-area: 2/1/3/-1;
+    }
+    .container-form {
+    grid-area: 2/1/3/-1;
+    }
+    #forms {
+    gap: 15px;
+    }
+    #box-info > ul > li + li {
+        margin-top: 15px;
+      }
+      footer {
+        flex-grow: 1;
+      }
+
+    
+}
+
+.remove {
+    display: none;
+}
